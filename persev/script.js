@@ -1,19 +1,20 @@
-const c=document.querySelector("#container");
-//  const convert = function(element){
-//    element.target.style.backgroundColor="gold"
-// };
+const container=document.querySelector("#container");
+const slider=document.querySelector('#slider');
 
-let n=prompt("How many rows would you like(less than 100):");
-
-while (n>100){
-n=prompt("How many rows would you like(less than 100):");
+slider.addEventListener("click",function(e){
+    while (container.hasChildNodes()) {
+    container.removeChild(container.lastChild);
 }
+    let n = e.target.value
+    console.log(e.target.value)
 
-for (i=1;i<=n**2;i++) {
-    let p=document.createElement("div");
-    p.setAttribute("id","created");
-    c.appendChild(p); 
+    for (i=1;i<=n**2;i++) {
+        let box=document.createElement("div");
+        box.setAttribute("id","created");
+        container.appendChild(box); 
 }
+})
+
 let items=document.querySelectorAll("#created");
 
 items.forEach(item =>item.addEventListener("mouseover",function(){
@@ -22,30 +23,6 @@ items.forEach(item =>item.addEventListener("mouseover",function(){
 const clear=document.querySelector('#clear')
 clear.addEventListener('click',function(){
     items.forEach(item =>item.style='background-color:white;'
-    )})
+)})
 
 
-
-// function grid(el) {
-//   var container = document.createElement("div");
-//   container.id = "main";
-//   container.className = "container";
-
-//   for (i=0; i<16; i+=1) {
-//       var row = document.createElement("div");
-//       row.className = "row";
-//       row.id = "row" + i;
-    
-//       for (k=0; k<16; k+=1) {
-//           var box = document.createElement("div"); 
-//           box.className = "box";
-//           row.appendChild(box);
-//       };
-    
-//       container.appendChild(row);      
-//   };
-
-//   el.appendChild(container);
-// };
-
-// grid(document.body);

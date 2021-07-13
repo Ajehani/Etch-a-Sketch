@@ -6,65 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        #created{
-            /* display:flex;
-            flex: 1 1 auto; */
+        #created{            
             transition: background-color 3s;
             padding:5px;
             display:flex;
             flex:1 1 auto;
             flex-wrap: wrap;
-
-        }
-        /* #maybe {
-            display: flex;
-            flex:1 1 auto;
-            width:62em;
-            height:30em;
-            border:3px solid black;
-        } */
+            }
+       
         #container {
-            /* display:grid;
-            grid-template-rows:repeat(16,2fr);
-            grid-template-columns:repeat(16,2fr); */
-            /* display: inline-flex; */
             display:flex;
             flex-wrap: wrap;
-            /* flex-direction:row; */
             flex:1 1 auto;
             width:62em;
             height:30em;
             border:3px solid black;
             overflow:auto;
         } 
-    </style>
-</head>
-<body>
 
-    <div id='maybe'>
-        <div id='container'>
-        </div>
-        </div>
+        label {
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+
+        #slider {
+            margin: .4rem;
+        }
+
+    </style>
+
+</head>
+        <div id='container'></div>
         <br>
 <button type="button" id="clear">Clear All</button>
+<div style="text-align:center;">
+<label>Number of Pixels(From Smallest to Largest)</label>
+<br>
+<input type="range" min="4" max="100" id="slider" value="15" step="1">
+</div>
 </body>
+
 <script src='script.js'></script>
+
 </html>    
-<!-- <style>
-   
-     .row {
-        border:1px solid green;  
-        height:1em;
-        line-height:1em;
-    }
 
-    .box {
-        display:inline-block;
-        width:6.25%;
-        height:1em;
-        box-sizing:border-box;
-        border:1px solid red; 
-    } 
-
-    </style> -->
