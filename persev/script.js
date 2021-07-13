@@ -3,7 +3,13 @@ const c=document.querySelector("#container");
 //    element.target.style.backgroundColor="gold"
 // };
 
-for (i=1;i<=256;i++) {
+let n=prompt("How many rows would you like(less than 100):");
+
+while (n>100){
+n=prompt("How many rows would you like(less than 100):");
+}
+
+for (i=1;i<=n**2;i++) {
     let p=document.createElement("div");
     p.setAttribute("id","created");
     c.appendChild(p); 
