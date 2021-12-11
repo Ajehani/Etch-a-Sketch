@@ -1,7 +1,7 @@
 const container=document.querySelector("#container");
 document.querySelector('#clear').addEventListener('click',()=>document.querySelectorAll('.created').forEach(el=>el.setAttribute('style','background-color:#ededed;')));
 const etch=(n,color)=>{
-    if(n>=34 && n<=240){
+    if(n>=0 && n<=240){
         for(let i=1;i<=n**2;i++) {
             let box=document.createElement("div");
             box.addEventListener("mouseover",()=>{
@@ -14,6 +14,7 @@ const etch=(n,color)=>{
 }
 document.querySelector('#click').addEventListener("click",()=>{
     let num=Number(prompt("Enter Size(between 24 and 240): "));
+    container.setAttribute("style",`grid-template-columns: repeat(${num},1fr);`) 
     let c=document.querySelector('#color').value
     while (container.hasChildNodes()) {
         container.removeChild(container.lastChild);
